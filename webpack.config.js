@@ -14,6 +14,21 @@ module.exports = (env, options) => ({
         test: /\.vue$/,
         loader: 'vue-loader',
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', 'stage-0'],
+            plugins: [
+              'transform-runtime',
+              'transform-class-properties',
+              'transform-decorators-legacy',
+            ],
+          },
+        },
+      },
     ],
   },
   resolve: {

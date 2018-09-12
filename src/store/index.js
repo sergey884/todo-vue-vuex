@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { ADD_NEW_TODO } from './mutation-types';
+import mutations from './mutations';
 
 Vue.use(Vuex);
 
@@ -11,11 +11,7 @@ const store = new Vuex.Store({
   getters: {
     getTodoList: state => state.todoList,
   },
-  mutations: {
-    [ADD_NEW_TODO](state, payload) {
-      state.todoList.push(payload);
-    },
-  },
+  mutations,
 });
 
 export default store;

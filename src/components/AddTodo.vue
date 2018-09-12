@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import { ADD_NEW_TODO } from '../store/mutation-types';
 
 export default {
@@ -18,8 +19,11 @@ export default {
   methods: {
       addNewTodo: function () {
         const todos = this.$store.getters.getTodoList;
+        const maxIdObj = _.maxBy(todos, o => o.id);
+        const maxId = (maxIdObj && maxIdObj.id) || 0;
+        console.log('maxId', maxId);
         const newTodo = {
-            id: todos.length,
+            id: maxId + 1,
             name: this.todoText,
             completed: false,
         };

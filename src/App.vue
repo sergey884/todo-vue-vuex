@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>Hello from {{ name }}</div>
+    <div>{{ name }}</div>
 		<AddTodo />
 		<TodoList />
 	</div>
@@ -14,7 +14,7 @@ export default {
   name: "App",
   data: function() {
     return {
-      name: "Vue - Vuex"
+      name: "ToDo Application"
     };
   },
   components: {
