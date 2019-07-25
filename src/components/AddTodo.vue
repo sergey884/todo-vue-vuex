@@ -21,7 +21,7 @@ export default {
         const todos = this.$store.getters.getTodoList;
         const maxIdObj = _.maxBy(todos, o => o.id);
         const maxId = (maxIdObj && maxIdObj.id) || 0;
-        console.log('maxId', maxId);
+
         const newTodo = {
             id: maxId + 1,
             name: this.todoText,
